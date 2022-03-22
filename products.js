@@ -4,7 +4,7 @@ let products = [
         "image": "images/math.png",
         "subject": "<strong>Math</strong>",
         "location": "China",
-        "price": 11,
+        "price": 10,
         "availableInventory": 5,
         "rating": 5
     },
