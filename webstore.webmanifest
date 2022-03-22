@@ -1,0 +1,20 @@
+{
+    "name": "My Webstore PWA",
+    "short_name": "webstore",
+    "description": "my online webstore",
+    "icons": [
+        {
+            "src": "images/icon-store-32.jpg",
+            "sizes": "32x32",
+            "type": "image/jpg"
+        },
+        {
+            "src": "images/icon-store-512.jpg",
+            "sizes": "512x512",
+            "type": "image/jpg"
+        }
+    ],
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "background_color": "#B12A34"
+}
