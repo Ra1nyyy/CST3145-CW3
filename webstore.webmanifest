@@ -1,17 +1,17 @@
 {
     "name": "My Webstore PWA",
     "short_name": "webstore",
-    "description": "my online webstore",
+    "description": "My online webstore",
     "icons": [
         {
-            "src": "images/icon-store-32.jpg",
+            "src": "images/icon-32.png",
             "sizes": "32x32",
-            "type": "image/jpg"
+            "type": "image/png"
         },
         {
-            "src": "images/icon-store-512.jpg",
+            "src": "images/icon-512.png",
             "sizes": "512x512",
-            "type": "image/jpg"
+            "type": "image/png"
         }
     ],
     "start_url": "index.html",
