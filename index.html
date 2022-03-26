@@ -20,8 +20,13 @@
 <body>
     <!-- MAIN DIV-->
     <div id="app">
+
+        
+
         <header>
             <h1 v-html='sitename'></h1>
+
+            <my-component text="World"></my-component>
             <!-- CHECKOUT BUTTON -->
             <div class="checkoutbut">
                 <button @click='showCheckout'>
@@ -32,6 +37,7 @@
             <br>
 
         </header>
+
         <main>
             
             <!-- PRODUCT PAGE-->
@@ -141,6 +147,12 @@
 
 
     <script>
+
+        //VUE COMPONENT
+        Vue.component('my-component', {
+            props:['text'],
+            template: '<div>Hello {{text}}</div>'
+        });
 
         // VUE INSTANCE
         let webstore = new Vue ({

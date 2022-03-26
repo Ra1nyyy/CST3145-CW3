@@ -43,7 +43,7 @@ self.addEventListener('install', (e) => {
 // })
 
 self.addEventListener('fetch', function (e) {
-    e.respondWidth(
+    e.respondWith(
         caches.match(e.request).then(function (r) {
             //DOWNLOAD THE FILE IF IT'S NOT IN THE CACHE
             return r || fetch(e.request).then(function (response) {
