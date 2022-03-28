@@ -10,7 +10,7 @@
             </button>
         </div>
     </header>
-    <product-list @addProduct='addToCart'></product-list>
+    <product-list :products='products' @addProduct='addToCart'></product-list>
     <checkout :cart='cart' @removeProduct='removeFromCart'></checkout>
   </div>
 </template>
@@ -29,21 +29,46 @@ export default {
     return {
       sitename: "Vue.js Webstore",
       cart: [],
-    }
+      products: [
+        {
+          id: 1,
+          image: "math.png",
+          subject: "Math",
+          location: "China",
+          price: 10,
+          availableInventory: 5,
+          rating: 5,
+          inCart: 0
+        },
+      ],
+    };
   },
   methods: {
     showCheckout: function(){
       this.showProduct = this.showProduct ? false : true;
       },
       addToCart(product) {
+        let added = false;
+        this.cart.forEach((product2) => {
+          if (product2.id === product.id) {
+            product.inCart++;
+            added = true;
+          }
+        });
+        if (!added) {
         this.cart.push(product)
+        product.inCart = 1;
+        }
         product.availableInventory --
       },
       removeFromCart(product) {
         this.cart.forEach(product2 => {
           if (product2.id === product.id) {
-            product.inventory ++
+            product.availableInventory ++;
+            product.inCart --;
+            if (product.inCart == 0) {
             this.cart.splice(this.cart.indexOf(product), 1)
+            }
           }
       });
     }

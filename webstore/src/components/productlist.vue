@@ -18,20 +18,9 @@
 
  export default {
      name: "ProductList",
+     props: ['products'],
      data() {
-         return {
-             products: [
-                 {
-                    id: 1,
-                    image: "math.png",
-                    subject: "Math",
-                    location: "China",
-                    price: 10,
-                    availableInventory: 5,
-                    rating: 5
-                 }
-             ]
-         }
+         return {}
      },
      methods: {
          addToCart(product) {

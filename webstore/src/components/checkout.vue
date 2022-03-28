@@ -3,7 +3,7 @@
         <h2>Checkout</h2>
         <h3>Added products</h3>
         <div v-for='product in cart' :key="product.id">
-            {{product.subject}} 
+            <h3>{{product.subject}}</h3> Quantity: {{product.inCart}}
             <button @click="removeProduct(product)">remove</button>
         </div>
         <p>
@@ -27,7 +27,6 @@ export default {
     methods: {
         removeProduct(product) {
             this.$emit('removeProduct', product)
-            product.availableInventory ++
         }
     }
 };
