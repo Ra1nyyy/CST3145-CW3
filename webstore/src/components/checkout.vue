@@ -1,16 +1,30 @@
 <template>
-    <div>
+    <div class="checkOut">
         <h2>Checkout</h2>
-        <h3>Added products</h3>
-        <div v-for='product in cart' :key="product.id">
-            <h3>{{product.subject}}</h3> Quantity: {{product.inCart}}
-            <button @click="removeProduct(product)">remove</button>
+        <div v-for='product in cart' :key="product.id" id="shoppingCart">
+            <p>
+                <img v-bind:src="product.image" width="150" height="150"/>
+                <br>
+                <b>{{product.subject}}</b>
+                <br>
+                Location: {{product.location}}
+                <br>
+                Price: {{product.price}}
+                <br>
+                Quantity:  x {{product.inCart}}
+                <button id="removebutton" @click="removeProduct(product)" >remove</button>
+            </p>
+            
         </div>
-        <p>
-            <strong>Name</strong> <input v-model="name"/>
-            <strong>Address</strong> <input v-model="address"/>
-            <button>Submit</button>
-        </p>
+        <div class="checkOut2">
+            <p>
+                <strong>Name</strong> <input v-model="name"/>
+                <strong>Address</strong> <input v-model="address"/>
+                <br>
+                <br>
+                <button id="removebutton">Submit</button>
+            </p>
+        </div>
     </div>
 </template>
 
@@ -31,3 +45,33 @@ export default {
     }
 };
 </script>
+<style>
+.checkOut {
+    text-align: left;
+    padding: 2%;
+    font-size: 20px;
+  }
+.checkOut2 {
+    /* border: 5px solid black; */
+    padding: 1%;
+    margin: 10px;
+    height: 150%;
+    background-color: grey;
+    text-align: center;
+}
+input {
+      border-radius: 14px;
+      font-size: 18px;
+  }
+#removebutton {
+    border-radius: 14px;
+    font-size: 100%;
+  }
+#shoppingCart {
+    border: 5px solid black;
+    margin: 15px;
+    text-align: center;
+    width: 30%;
+    display: inline-block;
+}
+</style>
