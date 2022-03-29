@@ -9,19 +9,6 @@
           {{this.cart.length}} Checkout
         </button>
       </div>
-
-      <!-- SORT BUTTONS -->
-      <div class="sort">
-        <p>Sort by:
-            <button @click="sortedPriceHigh">Price: High to Low</button>
-            <button @click="sortedPriceLow">Price: Low to High</button>
-            <button @click="sortedRatingsHigh">Avg. Customer Review</button>
-        </p>
-      </div>
-
-      <!-- SEARCH BAR -->
-      <input type="text" v-model="search" id="search" placeholder="Search..">
-
         
     </header>
     <div v-if='showProduct'>
@@ -181,14 +168,9 @@ export default {
           }
       });
     },
-    // sortedPriceLow: function(){
-    //     function compare(a,b){
-    //         if (a.price > b.price) return 1
-    //         if (a.price < b.price) return -1
-    //         return 0
-    //     }
-    //     return this.products.sort(compare)
-    // },
+      canAddToCart(product) {
+            return product.availableInventory > this.cartCount(product.id);
+    }
   }
 }
 </script>
@@ -205,14 +187,4 @@ export default {
 #productLists {
     box-sizing: border-box;
   }
-  .sort {
-    padding-right: 70%;
-    /* display: inline-block; */
-    font-size: 20px;
-    /* background-color: #2c3e50; */
-}
-.checkOutBut {
-  padding-left: 90%;
-  background-color: aqua;
-}
 </style>

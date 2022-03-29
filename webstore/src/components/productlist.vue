@@ -2,7 +2,6 @@
 
     <main>
         <div>
-
             <div v-for="product in products" :key="product.id"  class="productLists">
                 <figure>
                     <img v-bind:src="product.image" width="200" height="200"/>
@@ -32,6 +31,7 @@
          addToCart(product) {
             this.$emit('addProduct', product);
          },
+
      },
  };
 
