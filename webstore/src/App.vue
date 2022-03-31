@@ -168,9 +168,6 @@ export default {
           }
       });
     },
-      canAddToCart(product) {
-            return product.availableInventory > this.cartCount(product.id);
-    }
   }
 }
 </script>
